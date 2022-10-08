@@ -17,4 +17,4 @@ echo "DEBUG: npm run dev-docker --estuary-host=${ESTUARY_HOSTNAME} --estuary-api
 
 cd /usr/src/estuary-www
 
-npm run dev-docker --estuary-host=${ESTUARY_HOSTNAME} --estuary-api-key=${ESTUARY_TOKEN}
+npm run dev-docker --estuary-host=$ESTUARY_HOSTNAME --estuary-api-key=$ESTUARY_TOKEN
