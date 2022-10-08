@@ -9,4 +9,5 @@ RUN git clone https://github.com/application-research/estuary-www . && \
     npm install && \
     npm run build
 COPY start.sh /usr/src/estuary-www/start.sh
+RUN chmod +x /usr/src/estuary-www/start.sh
 CMD /usr/src/estuary-www/start.sh
