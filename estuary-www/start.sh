@@ -7,7 +7,7 @@ if [[ -z "${ESTUARY_TOKEN}" ]]; then
     echo token file $token_file not found, sleeping 15s then retrying
     sleep 15
   done
-  ESTUARY_TOKEN=$(cat $token_file)
+  export ESTUARY_TOKEN=$(cat $token_file)
 else
   echo "An Estuary token was passed as an env var, proceeding"
 fi
