@@ -12,5 +12,7 @@ else
   echo "An Estuary token was passed as an env var, proceeding"
 fi
 
+echo "Estuary hostname is ${ESTUARY_HOSTNAME}"
+
 cd /usr/src/estuary-www
 npm run dev-docker --estuary-host=${ESTUARY_HOSTNAME}
