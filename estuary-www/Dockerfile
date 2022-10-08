@@ -8,4 +8,5 @@ WORKDIR /usr/src/estuary-www
 RUN git clone https://github.com/application-research/estuary-www . && \
     npm install && \
     npm run build
-CMD npm run dev-docker
+COPY start.sh /usr/src/estuary-www/start.sh
+CMD /usr/src/estuary-www/start.sh
