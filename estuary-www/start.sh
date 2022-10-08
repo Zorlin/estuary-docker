@@ -13,4 +13,4 @@ else
 fi
 
 cd /usr/src/estuary-www
-npm run dev-docker
+npm run dev-docker --estuary-host=${ESTUARY_HOSTNAME}
