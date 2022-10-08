@@ -10,6 +10,7 @@ if [[ -z "${ESTUARY_TOKEN}" ]]; then
   ESTUARY_TOKEN=$(cat $token_file)
 else
   echo "An Estuary token was passed as an env var, proceeding"
+fi
 
 cd /usr/src/estuary-www
 npm run dev-docker
