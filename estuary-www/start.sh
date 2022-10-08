@@ -13,6 +13,8 @@ else
 fi
 
 echo "Estuary hostname is ${ESTUARY_HOSTNAME}"
+echo "DEBUG: npm run dev-docker --estuary-host=${ESTUARY_HOSTNAME} --estuary-api-key=${ESTUARY_TOKEN}"
 
 cd /usr/src/estuary-www
+
 npm run dev-docker --estuary-host=${ESTUARY_HOSTNAME} --estuary-api-key=${ESTUARY_TOKEN}
