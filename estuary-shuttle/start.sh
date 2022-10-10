@@ -17,7 +17,9 @@ else
 fi
 
 sleep 10s
-genKey=$(curl -H "Authorization: Bearer $ESTUARY_TOKEN" -X POST http://$ESTUARY_HOSTNAME/admin/shuttle/init)
+
+genKey=$(curl -H "Authorization: Bearer $ESTUARY_TOKEN" -X POST $ESTUARY_HOSTNAME/admin/shuttle/init)
+
 ESTUARY_SHUTTLE_HANDLE=$(echo $genKey | jq -r '.handle')
 ESTUARY_SHUTTLE_TOKEN=$(echo $genKey | jq -r '.token')
 
