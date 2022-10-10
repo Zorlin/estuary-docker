@@ -1,6 +1,4 @@
 #/bin/bash
-# Strip HTTPS from Estuary API URL
-ESTUARY_API="$(echo $ESTUARY_API | grep -oP '(http|https)://\K\S+')"
 # TODO: Move this to a proper variable/secret
 ESTUARY_SHUTTLE_DATA=/usr/src/estuary/data/
 
@@ -42,6 +40,9 @@ echo "Shuttle Data Directory: $ESTUARY_SHUTTLE_DATA"
 echo "Shuttle Token: $ESTUARY_SHUTTLE_TOKEN"
 echo "Shuttle Handle: $ESTUARY_SHUTTLE_HANDLE"
 echo "Estuary Token: $ESTUARY_TOKEN"
+
+# Strip protocol from Estuary API URL
+ESTUARY_API="$(echo $ESTUARY_API | grep -oP '(http|https)://\K\S+')"
 
 /usr/src/estuary-shuttle/estuary-shuttle --database="sqlite=$ESTUARY_SHUTTLE_DATA/estuary-shuttle.db" --datadir=$ESTUARY_SHUTTLE_DATA --estuary-api=$ESTUARY_API --auth-token=$ESTUARY_SHUTTLE_TOKEN --handle=$ESTUARY_SHUTTLE_HANDLE
 # tail -f /dev/null
